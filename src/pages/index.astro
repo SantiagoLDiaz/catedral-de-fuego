@@ -10,34 +10,30 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ministerio Catedral de Fuego | Rosario, Santa Fe</title>
-  <meta name="description" content="¡Sé parte de la familia de Catedral de Fuego! Te esperamos en nuestras reuniones en Rosario, Santa Fe." />
+  <meta name="description" content="Un lugar de fe, restauración y avivamiento en Rosario, Santa Fe." />
   
   <!-- Open Graph para vista previa en WhatsApp -->
   <meta property="og:title" content="Ministerio Catedral de Fuego - Rosario" />
-  <meta property="og:description" content="¡Sé parte de la familia de Catedral de Fuego! Te esperamos en Rosario, Santa Fe." />
+  <meta property="og:description" content="Un lugar de fe y comunidad en Rosario, Santa Fe." />
   <meta property="og:image" content="/images/pastores-catedral.jpg" />
   <meta property="og:type" content="website" />
 
-  <!-- Tipografías de Alto Impacto Estilo RAF -->
+  <!-- Tipografía de Alto Impacto Estilo RAF -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;600;800;900&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
 
   <!-- Script CDN de Tailwind CSS -->
   <script is:inline src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#0A0A0B] text-[#F3F3F5] font-['Montserrat',sans-serif] antialiased min-h-screen selection:bg-[#FF6D00] selection:text-white overflow-x-hidden">
 
-  <!-- Glows de Fondo Iluminación Fuego/Dorado (Estilo RAF) -->
-  <div class="fixed top-[-100px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-r from-[#FF6D00]/20 to-[#FFD700]/10 blur-[150px] pointer-events-none z-0"></div>
-  <div class="fixed bottom-0 right-0 w-[450px] h-[450px] bg-[#FF3D00]/10 blur-[180px] pointer-events-none z-0"></div>
-
-  <!-- Encabezado / Navegación -->
+  <!-- Encabezado / Navegación Móvil y Desktop Limpio -->
   <header class="sticky top-0 z-50 bg-[#0A0A0B]/90 backdrop-blur-xl border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
-      <a href="#" class="flex items-center gap-3 group">
-        <!-- Logo Llama con Degradado Fuego Perfecto -->
-        <svg class="w-8 h-9 transition transform group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(255,109,0,0.6)]" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center gap-2">
+      <a href="#" class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <!-- Logo Llama -->
+        <svg class="w-7 h-8 sm:w-8 sm:h-9 filter drop-shadow-[0_0_10px_rgba(255,109,0,0.5)]" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M 12,50 C 5,35 10,20 20,5 C 22,25 32,20 30,0 C 45,15 48,35 38,50 C 48,35 45,15 35,10 C 25,35 15,35 12,50 Z" fill="url(#headerFlame)" />
           <defs>
             <linearGradient id="headerFlame" x1="0" y1="60" x2="0" y2="0" gradientUnits="userSpaceOnUse">
@@ -48,8 +44,8 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
           </defs>
         </svg>
         <div class="flex flex-col leading-none">
-          <span class="text-[9px] tracking-[0.3em] text-zinc-400 font-bold uppercase" style="font-family: 'Cinzel', serif;">Ministerio</span>
-          <span class="text-base sm:text-lg font-black tracking-wider text-white uppercase" style="font-family: 'Cinzel', serif;">
+          <span class="text-[8px] sm:text-[9px] tracking-[0.25em] text-zinc-400 font-bold uppercase" style="font-family: 'Cinzel', serif;">Ministerio</span>
+          <span class="text-sm sm:text-base font-black tracking-wider text-white uppercase" style="font-family: 'Cinzel', serif;">
             Catedral <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FF9100] to-[#FF3D00]">de Fuego</span>
           </span>
         </div>
@@ -57,76 +53,52 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
 
       <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-semibold text-zinc-400">
         <a href="#inicio" class="hover:text-white transition">Inicio</a>
-        <a href="#pastores" class="hover:text-white transition">Bienvenida</a>
         <a href="#reuniones" class="hover:text-white transition">Horarios</a>
         <a href="#contacto" class="hover:text-white transition">Ubicación</a>
       </nav>
 
-      <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-bold text-xs tracking-wider uppercase px-5 py-2.5 rounded-full transition-all shadow-[0_0_25px_rgba(255,109,0,0.4)] flex items-center gap-2">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-bold text-xs tracking-wider uppercase px-4 sm:px-5 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(255,109,0,0.3)] flex items-center gap-1.5 shrink-0">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         <span>Escribinos</span>
       </a>
     </div>
   </header>
 
-  <!-- Hero Section Con la Imagen de los Pastores Estilo RAF -->
-  <section id="inicio" class="relative min-h-[92vh] flex items-center justify-center py-12 px-4 sm:px-6 relative z-10">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Columna Texto y Slogan -->
-      <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-        
-        <!-- Badge Rosario -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl">
-          <span class="w-2 h-2 rounded-full bg-[#FF9100] animate-pulse"></span>
-          <span class="text-xs uppercase tracking-[0.25em] font-semibold text-zinc-300">Rosario · Santa Fe</span>
-        </div>
-
-        <!-- Frase Principal tomada de la foto oficial -->
-        <div class="space-y-2">
-          <p class="text-2xl sm:text-3xl text-[#FFD700] font-normal italic tracking-wide" style="font-family: 'Great Vibes', cursive;">
-            ¡Sé parte de la
-          </p>
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.02]">
-            Familia <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FF9100] to-[#FF3D00]">de Catedral de Fuego</span>
-          </h1>
-        </div>
-
-        <p class="text-base sm:text-lg text-zinc-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-          Un lugar de fe, restauración y avivamiento. Te abrimos las puertas para compartir juntos la Palabra de Dios y transformar nuestras familias.
-        </p>
-
-        <!-- Botones de Acción -->
-        <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 pt-4">
-          <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-extrabold px-8 py-4 rounded-xl text-xs uppercase tracking-widest transition-all shadow-[0_0_35px_rgba(255,109,0,0.4)] flex items-center justify-center gap-3">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            <span>Contactar por WhatsApp</span>
-          </a>
-          <a href="#reuniones" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-widest transition-all backdrop-blur-md">
-            Ver Horarios
-          </a>
+  <!-- Hero Section con Controles Manuales de Fondo -->
+  <section id="inicio" 
+    class="relative min-h-[88vh] flex items-end sm:items-center justify-start text-left px-4 sm:px-12 z-10 overflow-hidden bg-cover bg-[position:50%_0%] lg:bg-[size:88%] lg:bg-[position:100%_40%] md:bg-right-top " 
+    style="background-image: 
+      linear-gradient(to top, rgba(10,10,11,0.95) 0%, rgba(10,10,11,0.5) 50%, rgba(10,10,11,0.1) 100%), 
+      linear-gradient(to right, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0) 60%, rgba(10,10,11,0) 100%), 
+      url('/images/pastores-catedral.jpg');"
+  >
+    <div class="max-w-xl py-12 sm:py-20 relative z-20 space-y-5">
+      <!-- Badges Informativos -->
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#FF6D00]/20 border-l-4 border-[#FF9100] backdrop-blur-md">
+          <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#FFD700]">Rosario · Santa Fe</span>
         </div>
       </div>
 
-      <!-- Columna Foto de Pastores Estilo Marco RAF con Glow Dorado -->
-      <div id="pastores" class="lg:col-span-5 relative flex justify-center">
-        <!-- Anillo Glow de fondo -->
-        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#FF3D00]/30 via-[#FF9100]/20 to-[#FFD700]/30 blur-2xl -z-10"></div>
-        
-        <!-- Tarjeta Marco Elegante -->
-        <div class="relative rounded-2xl overflow-hidden border border-white/15 p-2 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-md shadow-2xl group max-w-md w-full">
-          <img 
-            src="/images/pastores-catedral.jpg" 
-            alt="Pastores Ministerio Catedral de Fuego Rosario" 
-            class="w-full h-auto rounded-xl object-cover transition transform duration-500 group-hover:scale-102"
-          />
-          <div class="absolute bottom-4 left-4 right-4 bg-[#0A0A0B]/90 backdrop-blur-md border border-white/10 p-3.5 rounded-xl text-center">
-            <p class="text-xs font-bold uppercase tracking-widest text-[#FFD700]">Ministerio Pastoral</p>
-            <p class="text-xs text-zinc-300 font-light mt-0.5">Te esperamos con los brazos abiertos</p>
-          </div>
-        </div>
-      </div>
+      <!-- Título Impactante -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] drop-shadow-xl">
+        Un lugar de fe, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FF9100] to-[#FF3D00]">esperanza y transformación</span>
+      </h1>
 
+      <p class="text-sm sm:text-base text-zinc-300 font-light leading-relaxed drop-shadow-md max-w-lg">
+        ¡Sé parte de la familia de Catedral de Fuego! Te abrimos las puertas para compartir juntos la Palabra de Dios y transformar nuestras familias.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
+        <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-extrabold px-7 py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(255,109,0,0.4)] flex items-center justify-center gap-2.5">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Contactar por WhatsApp</span>
+        </a>
+        <a href="#reuniones" class="bg-black/50 hover:bg-black/70 text-white border border-white/20 font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all backdrop-blur-md text-center">
+          Ver Horarios
+        </a>
+      </div>
     </div>
   </section>
 
@@ -190,12 +162,12 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
       <!-- Mapa Interactivo -->
       <div class="w-full h-96 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
         <iframe 
-          class="w-full h-full border-0 grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1484817110595!2d-60.63455309999999!3d-32.9734842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7abb46288503d%3A0x5216989f35114105!2sMinisterio%20Catedral%20de%20Fuego!5e0!3m2!1ses!2sar!4v1790606273133!5m2!1ses!2sar" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+		class="w-full h-full border-0" 
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1484817110595!2d-60.63455309999999!3d-32.9734842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7abb46288503d%3A0x5216989f35114105!2sMinisterio%20Catedral%20de%20Fuego!5e0!3m2!1ses!2sar!4v1790606273133!5m2!1ses!2sar" 
+		allowfullscreen="" 
+		loading="lazy" 
+		referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
       </div>
     </div>
   </section>
