@@ -2,6 +2,13 @@
 // src/pages/index.astro
 const WSP_NUMBER = "5493413489281"; // Modificar por el número real con código de área de Rosario (341)
 const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre las reuniones del Ministerio Catedral de Fuego.");
+
+// Enlaces de Redes Sociales Oficiales
+const SOCIAL_LINKS = {
+  youtube: "https://youtube.com/@ministeriocatedraldefuego?si=tjjvBBqS8QNFZEpt",
+  facebook: "https://www.facebook.com/share/1DrRHAtW8d/?mibextid=wwXIfr",
+  instagram: "https://www.instagram.com/apostolmaicosuarez?stkn=MXZwM3kwc2hhN3F3Mw=="
+};
 ---
 
 <!DOCTYPE html>
@@ -12,6 +19,9 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
   <title>Ministerio Catedral de Fuego | Rosario, Santa Fe</title>
   <meta name="description" content="Un lugar de fe, restauración y avivamiento en Rosario, Santa Fe." />
   
+  <!-- Favicon Oficial -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
   <!-- Open Graph para vista previa en WhatsApp -->
   <meta property="og:title" content="Ministerio Catedral de Fuego - Rosario" />
   <meta property="og:description" content="Un lugar de fe y comunidad en Rosario, Santa Fe." />
@@ -28,39 +38,48 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
 </head>
 <body class="bg-[#0A0A0B] text-[#F3F3F5] font-['Montserrat',sans-serif] antialiased min-h-screen selection:bg-[#FF6D00] selection:text-white overflow-x-hidden">
 
-  <!-- Encabezado / Navegación Móvil y Desktop Limpio -->
+ <!-- Encabezado / Navegación Móvil y Desktop con Logo Completo Oficial -->
   <header class="sticky top-0 z-50 bg-[#0A0A0B]/90 backdrop-blur-xl border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center gap-2">
-      <a href="#" class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <!-- Logo Llama -->
-        <svg class="w-7 h-8 sm:w-8 sm:h-9 filter drop-shadow-[0_0_10px_rgba(255,109,0,0.5)]" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 12,50 C 5,35 10,20 20,5 C 22,25 32,20 30,0 C 45,15 48,35 38,50 C 48,35 45,15 35,10 C 25,35 15,35 12,50 Z" fill="url(#headerFlame)" />
-          <defs>
-            <linearGradient id="headerFlame" x1="0" y1="60" x2="0" y2="0" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF3D00"/>
-              <stop offset="0.5" stop-color="#FF9100"/>
-              <stop offset="1" stop-color="#FFEA00"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="flex flex-col leading-none">
-          <span class="text-[8px] sm:text-[9px] tracking-[0.25em] text-zinc-400 font-bold uppercase" style="font-family: 'Cinzel', serif;">Ministerio</span>
-          <span class="text-sm sm:text-base font-black tracking-wider text-white uppercase" style="font-family: 'Cinzel', serif;">
-            Catedral <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FF9100] to-[#FF3D00]">de Fuego</span>
-          </span>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center gap-2">
+      
+      <!-- Logo Completo Institucional -->
+      <a href="#" class="flex items-center shrink-0 group">
+        <img 
+          src="favicon.svg" 
+          alt="Ministerio Catedral de Fuego" 
+          class="h-10 sm:h-12 w-auto object-contain transition transform group-hover:scale-102 filter drop-shadow-[0_0_10px_rgba(255,109,0,0.3)]"
+        />
       </a>
 
+      <!-- Navegación Principal -->
       <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-semibold text-zinc-400">
         <a href="#inicio" class="hover:text-white transition">Inicio</a>
         <a href="#reuniones" class="hover:text-white transition">Horarios</a>
         <a href="#contacto" class="hover:text-white transition">Ubicación</a>
       </nav>
 
-      <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-bold text-xs tracking-wider uppercase px-4 sm:px-5 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(255,109,0,0.3)] flex items-center gap-1.5 shrink-0">
-        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>Escribinos</span>
-      </a>
+      <!-- Redes y Botón de Contacto -->
+      <div class="flex items-center gap-3">
+        <!-- Iconos Rápidos de Redes -->
+        <div class="hidden sm:flex items-center gap-2 pr-2 border-r border-white/10">
+          <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="p-1.5 text-zinc-400 hover:text-[#FF0000] transition" aria-label="YouTube">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 0 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" class="p-1.5 text-zinc-400 hover:text-[#E4405F] transition" aria-label="Instagram">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" class="p-1.5 text-zinc-400 hover:text-[#1877F2] transition" aria-label="Facebook">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+
+        <!-- Botón Escribinos -->
+        <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-bold text-xs tracking-wider uppercase px-4 sm:px-5 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(255,109,0,0.3)] flex items-center gap-1.5 shrink-0">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Escribinos</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
@@ -73,12 +92,14 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
       url('/images/pastores-catedral.jpg');"
   >
     <div class="max-w-xl py-12 sm:py-20 relative z-20 space-y-5">
-      <!-- Badges Informativos -->
-      <div class="space-y-2">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#FF6D00]/20 border-l-4 border-[#FF9100] backdrop-blur-md">
-          <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#FFD700]">Rosario · Santa Fe</span>
-        </div>
-      </div>
+      <!-- Badges Informativos (Achicado para móvil y desplazado hacia abajo) -->
+		<div class="mt-4 sm:mt-6 space-y-2">
+		<div class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-md bg-[#FF6D00]/20 border-l-2 sm:border-l-4 border-[#FF9100] backdrop-blur-md">
+			<span class="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold text-[#FFD700]">
+			Rosario · Santa Fe
+			</span>
+		</div>
+		</div>
 
       <!-- Título Impactante -->
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] drop-shadow-xl">
@@ -102,38 +123,68 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
     </div>
   </section>
 
-  <!-- Sección Horarios con Tarjetas Estilo RAF -->
+  <!-- Sección Horarios de Reuniones Actualizados -->
   <section id="reuniones" class="py-20 px-4 max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-14 space-y-2">
       <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#FF9100]">Encuentros Presenciales</span>
-      <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">Nuestras <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF3D00]">Reuniones</span></h2>
+      <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
+        Nuestras <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF3D00]">Reuniones</span>
+      </h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Reunión General (Días y Horarios Oficiales) -->
       <div class="group bg-gradient-to-b from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10 hover:border-[#FF9100]/50 transition-all duration-300 backdrop-blur-md relative overflow-hidden">
-        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">01</div>
-        <h3 class="text-xl font-black uppercase text-white tracking-wide mb-1">Reunión General</h3>
-        <p class="text-xs font-semibold text-[#FF9100] uppercase tracking-wider">Domingos · 19:00 hs</p>
-        <p class="text-xs text-zinc-400 mt-4 leading-relaxed font-light">Un tiempo especial de alabanza, predicación de la Palabra y comunión familiar en presencia de Dios.</p>
+        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">
+          01
+        </div>
+        <h3 class="text-xl font-black uppercase text-white tracking-wide mb-2">Reunión General</h3>
+        
+        <div class="space-y-1.5 border-t border-b border-white/10 py-3 my-3">
+          <p class="text-xs font-bold text-[#FF9100] uppercase tracking-wider flex items-center justify-between">
+            <span>Miércoles, Viernes y Domingos</span>
+            <span class="text-white bg-[#FF6D00]/20 px-2 py-0.5 rounded border border-[#FF6D00]/40">19:30 hs</span>
+          </p>
+          <p class="text-xs font-bold text-[#FFD700] uppercase tracking-wider flex items-center justify-between">
+            <span>Domingos (Reunión Matutina)</span>
+            <span class="text-white bg-[#FFD700]/20 px-2 py-0.5 rounded border border-[#FFD700]/40">10:30 hs</span>
+          </p>
+        </div>
+
+        <p class="text-xs text-zinc-400 mt-2 leading-relaxed font-light">
+          Tiempos especiales de alabanza, oración, ministración y predicación de la Palabra para toda la familia.
+        </p>
       </div>
 
+      <!-- Escuela de Líderes -->
       <div class="group bg-gradient-to-b from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10 hover:border-[#FF9100]/50 transition-all duration-300 backdrop-blur-md relative overflow-hidden">
-        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">02</div>
+        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">
+          02
+        </div>
         <h3 class="text-xl font-black uppercase text-white tracking-wide mb-1">Escuela de Líderes</h3>
-        <p class="text-xs font-semibold text-[#FF9100] uppercase tracking-wider">Miércoles · 20:00 hs</p>
-        <p class="text-xs text-zinc-400 mt-4 leading-relaxed font-light">Capacitación teológica y estudio profundo para el desarrollo de servidores y líderes de hogar.</p>
+        <p class="text-xs font-semibold text-[#FF9100] uppercase tracking-wider">Capacitación y Formación</p>
+        <p class="text-xs text-zinc-400 mt-4 leading-relaxed font-light">
+          Espacio de capacitación teológica y desarrollo de servidores y líderes para el trabajo ministerial.
+        </p>
       </div>
 
+      <!-- Jóvenes de Fuego -->
       <div class="group bg-gradient-to-b from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10 hover:border-[#FF9100]/50 transition-all duration-300 backdrop-blur-md relative overflow-hidden">
-        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">03</div>
+        <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">
+          03
+        </div>
         <h3 class="text-xl font-black uppercase text-white tracking-wide mb-1">Jóvenes de Fuego</h3>
         <p class="text-xs font-semibold text-[#FF9100] uppercase tracking-wider">Sábados · 18:30 hs</p>
-        <p class="text-xs text-zinc-400 mt-4 leading-relaxed font-light">Un espacio vibrante para la juventud con música en vivo, charlas y dinámicas para fortalecer la fe.</p>
+        <p class="text-xs text-zinc-400 mt-4 leading-relaxed font-light">
+          Un espacio dinámico e interactivo para la juventud con música, palabra y actividades de integración.
+        </p>
       </div>
+
     </div>
   </section>
 
-  <!-- Sección Ubicación y Mapa -->
+  <!-- Sección Ubicación y Mapa con Canales Oficiales -->
   <section id="contacto" class="py-20 px-4 max-w-7xl mx-auto border-t border-white/5 relative z-10">
     <div class="text-center mb-14 space-y-2">
       <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#FF9100]">Sede Rosario</span>
@@ -149,8 +200,24 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
         </div>
 
         <div>
-          <span class="text-xs uppercase tracking-widest text-[#FF9100] font-bold">Atención y Oración</span>
-          <p class="text-zinc-300 text-sm mt-1 font-light leading-relaxed">Coordiná tu visita o envianos tus intenciones directamente a nuestro equipo pastoral.</p>
+          <span class="text-xs uppercase tracking-widest text-[#FF9100] font-bold">Nuestras Redes Oficiales</span>
+          <p class="text-zinc-300 text-sm mt-1 font-light leading-relaxed mb-4">Seguinos en nuestras plataformas digitales para ver las prédicas y transmisiones en vivo.</p>
+          
+          <!-- Botones de Redes Sociales -->
+          <div class="flex flex-wrap gap-3">
+            <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-white/5 hover:bg-[#FF0000]/20 border border-white/10 hover:border-[#FF0000]/40 text-xs font-semibold px-4 py-2.5 rounded-lg transition text-zinc-200">
+              <svg class="w-4 h-4 fill-[#FF0000]" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 0 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>YouTube</span>
+            </a>
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-white/5 hover:bg-[#1877F2]/20 border border-white/10 hover:border-[#1877F2]/40 text-xs font-semibold px-4 py-2.5 rounded-lg transition text-zinc-200">
+              <svg class="w-4 h-4 fill-[#1877F2]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-white/5 hover:bg-[#E4405F]/20 border border-white/10 hover:border-[#E4405F]/40 text-xs font-semibold px-4 py-2.5 rounded-lg transition text-zinc-200">
+              <svg class="w-4 h-4 fill-[#E4405F]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
 
         <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-extrabold px-8 py-4 rounded-xl text-xs uppercase tracking-widest transition shadow-[0_0_25px_rgba(255,109,0,0.3)]">
@@ -159,15 +226,15 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
         </a>
       </div>
 
-      <!-- Mapa Interactivo -->
+      <!-- Mapa Interactivo (A todo color) -->
       <div class="w-full h-96 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
         <iframe 
-		class="w-full h-full border-0" 
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1484817110595!2d-60.63455309999999!3d-32.9734842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7abb46288503d%3A0x5216989f35114105!2sMinisterio%20Catedral%20de%20Fuego!5e0!3m2!1ses!2sar!4v1790606273133!5m2!1ses!2sar" 
-		allowfullscreen="" 
-		loading="lazy" 
-		referrerpolicy="no-referrer-when-downgrade">
-		</iframe>
+          class="w-full h-full border-0" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1484817110595!2d-60.63455309999999!3d-32.9734842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7abb46288503d%3A0x5216989f35114105!2sMinisterio%20Catedral%20de%20Fuego!5e0!3m2!1ses!2sar!4v1790606273133!5m2!1ses!2sar" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
@@ -177,8 +244,13 @@ const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
   </a>
 
-  <!-- Pie de Página -->
-  <footer class="bg-black py-10 border-t border-white/5 text-center text-xs text-zinc-500 px-4">
+  <!-- Pie de Página Completo con Redes -->
+  <footer class="bg-black py-12 border-t border-white/5 text-center text-xs text-zinc-500 px-4 space-y-4">
+    <div class="flex justify-center items-center gap-6 text-zinc-400">
+      <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="hover:text-[#FF0000] transition">YouTube</a>
+      <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-[#1877F2] transition">Facebook</a>
+      <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-[#E4405F] transition">Instagram</a>
+    </div>
     <p>© {new Date().getFullYear()} Ministerio Catedral de Fuego - Rosario, Santa Fe. Todos los derechos reservados.</p>
   </footer>
 
