@@ -1,6 +1,6 @@
 ---
 // src/pages/index.astro
-const WSP_NUMBER = "5493413489281"; // Modificar por el número real con código de área de Rosario (341)
+const WSP_NUMBER = "5493413489281"; // Número oficial de WhatsApp
 const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre las reuniones del Ministerio Catedral de Fuego.");
 
 // Enlaces de Redes Sociales Oficiales
@@ -10,7 +10,7 @@ const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/apostolmaicosuarez?stkn=MXZwM3kwc2hhN3F3Mw=="
 };
 
-// Novedades / Anuncios para el Carrusel
+// Array de Novedades / Anuncios para el Carrusel
 const NOVEDADES = [
   {
     id: 1,
@@ -19,7 +19,7 @@ const NOVEDADES = [
     fecha: "Día 14 de Noviembre · 18:30 hs",
     invitados: "Profeta Soledad Suárez (Anfitriona) & Profeta Daniela Larrea (Bs As)",
     imagen: "/images/congreso-mujeres.jpg",
-    detalle: "Entrada libre y gratuita. Te invita Ministerio Catedral de Fuego.",
+    detalle: "Una tarde en la presencia de Dios. Entrada libre y gratuita. Te invita Ministerio Catedral de Fuego.",
     linkWhatsAppMsg: encodeURIComponent("¡Hola! Quisiera más información para asistir al Congreso de Mujeres el 14 de Noviembre.")
   },
   {
@@ -32,7 +32,6 @@ const NOVEDADES = [
     detalle: "Un tiempo para activar la revelación de la Palabra y direccionar la oración para alcanzar respuestas. ¡Dios quiere hablarte y hacer grandes cosas!",
     linkWhatsAppMsg: encodeURIComponent("¡Hola! Quisiera más información sobre los 40 Días de Ayuno y Oración.")
   }
-  // Podés agregar más flyers al array simplemente copiando este bloque
 ];
 ---
 
@@ -63,14 +62,14 @@ const NOVEDADES = [
 </head>
 <body class="bg-[#0A0A0B] text-[#F3F3F5] font-['Montserrat',sans-serif] antialiased min-h-screen selection:bg-[#FF6D00] selection:text-white overflow-x-hidden">
 
-  <!-- Encabezado / Navegación Móvil y Desktop Limpio con Logo Completo Oficial -->
+  <!-- Encabezado / Navegación Móvil y Desktop con Logo Completo Oficial -->
   <header class="sticky top-0 z-50 bg-[#0A0A0B]/90 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center gap-2">
       
       <!-- Logo Completo Institucional -->
       <a href="#" class="flex items-center shrink-0 group">
         <img 
-          src="/images/logo-completo.jpg" 
+          src="favicon.svg" 
           alt="Ministerio Catedral de Fuego" 
           class="h-10 sm:h-12 w-auto object-contain transition transform group-hover:scale-102 filter drop-shadow-[0_0_10px_rgba(255,109,0,0.3)]"
         />
@@ -86,6 +85,7 @@ const NOVEDADES = [
 
       <!-- Redes y Botón de Contacto -->
       <div class="flex items-center gap-3">
+        <!-- Iconos Rápidos de Redes -->
         <div class="hidden sm:flex items-center gap-2 pr-2 border-r border-white/10">
           <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="p-1.5 text-zinc-400 hover:text-[#FF0000] transition" aria-label="YouTube">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -98,6 +98,7 @@ const NOVEDADES = [
           </a>
         </div>
 
+        <!-- Botón Escribinos -->
         <a href={`https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}`} target="_blank" class="bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-bold text-xs tracking-wider uppercase px-4 sm:px-5 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(255,109,0,0.3)] flex items-center gap-1.5 shrink-0">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           <span>Escribinos</span>
@@ -107,16 +108,17 @@ const NOVEDADES = [
     </div>
   </header>
 
-  <!-- Hero Section Con Fondo Ajustado -->
+  <!-- Hero Section con Controles Manuales de Fondo -->
   <section id="inicio" 
-    class="relative min-h-[85vh] flex items-end sm:items-center justify-start text-left px-4 sm:px-12 z-10 overflow-hidden bg-cover bg-[position:50%_0%] lg:bg-[size:88%] lg:bg-[position:100%_40%] md:bg-right-top " 
+    class="relative min-h-[88vh] flex items-end sm:items-center justify-start text-left px-4 sm:px-12 z-10 overflow-hidden bg-cover bg-[position:50%_0%] lg:bg-[size:88%] lg:bg-[position:100%_40%] md:bg-right-top " 
     style="background-image: 
       linear-gradient(to top, rgba(10,10,11,0.95) 0%, rgba(10,10,11,0.5) 50%, rgba(10,10,11,0.1) 100%), 
       linear-gradient(to right, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0) 60%, rgba(10,10,11,0) 100%), 
       url('/images/pastores-catedral.jpg');"
   >
     <div class="max-w-xl py-12 sm:py-20 relative z-20 space-y-5">
-      <!-- Badges Informativos -->
+      
+      <!-- Badge Informativo Ubicación -->
       <div class="mt-4 sm:mt-6 space-y-2">
         <div class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-md bg-[#FF6D00]/20 border-l-2 sm:border-l-4 border-[#FF9100] backdrop-blur-md">
           <span class="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold text-[#FFD700]">
@@ -147,7 +149,7 @@ const NOVEDADES = [
     </div>
   </section>
 
-  <!-- SECCIÓN NOVEDADES / CARRUSEL DESPLAZABLE (5 SEGUNDOS) -->
+  <!-- SECCIÓN NOVEDADES / CARRUSEL DESPLAZABLE (ROTA CADA 5 SEGUNDOS) -->
   <section id="noticias" class="py-16 px-4 max-w-7xl mx-auto relative z-10 border-t border-white/5">
     <div class="text-center mb-10 space-y-2">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF6D00]/20 border border-[#FF9100]/40">
@@ -196,7 +198,7 @@ const NOVEDADES = [
 
               <div class="space-y-2 border-l-2 border-[#FF9100] pl-4 py-1">
                 <p class="text-xs sm:text-sm text-zinc-300 font-medium">
-                  <strong class="text-white">Invitados especiales:</strong> {item.invitados}
+                  <strong class="text-white">Programa / Invitados:</strong> {item.invitados}
                 </p>
                 <p class="text-xs text-zinc-400 font-light leading-relaxed">
                   {item.detalle}
@@ -232,7 +234,7 @@ const NOVEDADES = [
     </div>
   </section>
 
-  <!-- Sección Horarios de Reuniones -->
+  <!-- Sección Horarios de Reuniones Actualizados -->
   <section id="reuniones" class="py-20 px-4 max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-14 space-y-2">
       <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#FF9100]">Encuentros Presenciales</span>
@@ -242,7 +244,8 @@ const NOVEDADES = [
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Reunión General -->
+      
+      <!-- Reunión General (Días y Horarios Oficiales) -->
       <div class="group bg-gradient-to-b from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10 hover:border-[#FF9100]/50 transition-all duration-300 backdrop-blur-md relative overflow-hidden">
         <div class="w-12 h-12 rounded-xl bg-[#FF6D00]/10 border border-[#FF6D00]/30 flex items-center justify-center text-[#FFD700] font-black text-xl mb-6">
           01
@@ -288,6 +291,7 @@ const NOVEDADES = [
           Un espacio dinámico e interactivo para la juventud con música, palabra y actividades de integración.
         </p>
       </div>
+
     </div>
   </section>
 
@@ -310,6 +314,7 @@ const NOVEDADES = [
           <span class="text-xs uppercase tracking-widest text-[#FF9100] font-bold">Nuestras Redes Oficiales</span>
           <p class="text-zinc-300 text-sm mt-1 font-light leading-relaxed mb-4">Seguinos en nuestras plataformas digitales para ver las prédicas y transmisiones en vivo.</p>
           
+          <!-- Botones de Redes Sociales -->
           <div class="flex flex-wrap gap-3">
             <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-white/5 hover:bg-[#FF0000]/20 border border-white/10 hover:border-[#FF0000]/40 text-xs font-semibold px-4 py-2.5 rounded-lg transition text-zinc-200">
               <svg class="w-4 h-4 fill-[#FF0000]" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -350,7 +355,7 @@ const NOVEDADES = [
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
   </a>
 
-  <!-- Pie de Página Completo -->
+  <!-- Pie de Página Completo con Redes -->
   <footer class="bg-black py-12 border-t border-white/5 text-center text-xs text-zinc-500 px-4 space-y-4">
     <div class="flex justify-center items-center gap-6 text-zinc-400">
       <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" class="hover:text-[#FF0000] transition">YouTube</a>
@@ -410,7 +415,7 @@ const NOVEDADES = [
       };
 
       const startTimer = () => {
-        // Desplazamiento automático cada 5000ms (5 segundos)
+        // Desplazamiento automático cada 5 segundos (5000 ms)
         intervalId = setInterval(nextSlide, 5000);
       };
 
@@ -433,7 +438,6 @@ const NOVEDADES = [
         });
       }
 
-      // Ocultar botones de navegación si hay un solo anuncio
       if (slides.length <= 1) {
         if (prevBtn) prevBtn.style.display = 'none';
         if (nextBtn) nextBtn.style.display = 'none';
