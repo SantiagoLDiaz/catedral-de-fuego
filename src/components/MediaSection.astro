@@ -1,0 +1,77 @@
+---
+import { RADIO_STREAM_URL, WSP_CHANNEL, SOCIAL_LINKS } from '../data/siteData';
+---
+
+<section id="medios" class="py-16 px-4 max-w-7xl mx-auto relative z-10 border-t border-white/5">
+  <div class="text-center mb-12 space-y-2">
+    <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#FF9100]">Canales Digitales</span>
+    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
+      Medios <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF3D00]">& Radio</span>
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+    
+    <!-- 1. Radio FM 95.7 -->
+    <div class="bg-gradient-to-b from-white/5 to-white/[0.02] p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#FF9100]/50 transition-all backdrop-blur-md flex flex-col justify-between space-y-6">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF6D00]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7a3 3 0 0 0 3 3h3v-8H5v-2a7 7 0 0 1 14 0v2h-4v8h3a3 3 0 0 0 3-3v-7a9 9 0 0 0-9-9z"/></svg>
+          <span>FM 95.7 Cristiana</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black uppercase text-white">Radio Cristiana en Vivo</h3>
+        <p class="text-xs text-zinc-300 font-light leading-relaxed">
+          Sintoniza todos los días el programa conducido por el <strong class="text-white">Apóstol Maico Suárez y su equipo radial</strong>.
+        </p>
+        <ul class="text-xs text-zinc-400 space-y-1.5 border-l-2 border-[#FF9100] pl-3 py-1">
+          <li>• <strong class="text-zinc-200">De Lunes a Viernes:</strong> 9:00 hs y 19:00 hs</li>
+          <li>• <strong class="text-zinc-200">Domingos:</strong> 12:00 hs</li>
+        </ul>
+      </div>
+      <a href={RADIO_STREAM_URL} target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-[#FF9100] to-[#FF3D00] hover:brightness-110 text-white font-extrabold text-xs uppercase tracking-widest py-3.5 rounded-xl text-center transition flex items-center justify-center gap-2">
+        <span>Escuchar Radio Online</span>
+      </a>
+    </div>
+
+    <!-- 2. Spotify Podcast -->
+    <div class="bg-gradient-to-b from-white/5 to-white/[0.02] p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#1DB954]/50 transition-all backdrop-blur-md flex flex-col justify-between space-y-6">
+    <div class="space-y-4">
+        
+        <!-- Badge de Spotify con SVG vectorizado correcto -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1DB954]/20 text-[#1DB954] text-xs font-bold uppercase tracking-wider">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-1.2-.18-1.38-.78-.18-.6.18-1.2.78-1.38 4.26-1.26 11.28-1.02 15.72 1.62.6.36.78 1.14.42 1.68-.36.6-1.14.78-1.68.42z" />
+        </svg>
+        <span>Podcast Oficial</span>
+        </div>
+
+        <h3 class="text-xl sm:text-2xl font-black uppercase text-white">Prédicas en Spotify</h3>
+        <p class="text-xs text-zinc-300 font-light leading-relaxed">
+        Escuchá los mensajes, prédicas y la Palabra de Dios en cualquier momento y lugar a través de nuestro canal oficial.
+        </p>
+    </div>
+
+    <a href={SOCIAL_LINKS.spotify} target="_blank" rel="noopener noreferrer" class="w-full bg-[#1DB954] hover:brightness-110 text-black font-extrabold text-xs uppercase tracking-widest py-3.5 rounded-xl text-center transition flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(29,185,84,0.3)]">
+        <span>Escuchar en Spotify</span>
+    </a>
+    </div>
+
+    <!-- 3. Canal de WhatsApp -->
+    <div class="bg-gradient-to-b from-white/5 to-white/[0.02] p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-green-500/50 transition-all backdrop-blur-md flex flex-col justify-between space-y-6">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Comunidad Oficial</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black uppercase text-white">Canal de WhatsApp</h3>
+        <p class="text-xs text-zinc-300 font-light leading-relaxed">
+          Recibí los devocionales diarios, anuncios de eventos, transmisiones en vivo e información actualizada directamente en tu teléfono.
+        </p>
+      </div>
+      <a href={WSP_CHANNEL} target="_blank" rel="noopener noreferrer" class="w-full bg-green-600 hover:bg-green-500 text-white font-extrabold text-xs uppercase tracking-widest py-3.5 rounded-xl text-center transition flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+        <span>Unirme al Canal</span>
+      </a>
+    </div>
+
+  </div>
+</section>
