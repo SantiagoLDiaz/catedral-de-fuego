@@ -1,7 +1,7 @@
 export const WSP_NUMBER = import.meta.env.PUBLIC_WSP_NUMBER || "";
 export const WSP_MESSAGE = encodeURIComponent("¡Hola! Quisiera más información sobre las reuniones del Ministerio Catedral de Fuego.");
 export const WSP_CHANNEL = import.meta.env.PUBLIC_WSP_CHANNEL || "";
-export const SPOTIFY_URL = import.meta.env.PUBLIC_SPOTIFY_URL || "https://open.spotify.com/show/4zbHdktggp6ORH8Yhp05SO?si=4ac40f872daf4bed";
+export const SPOTIFY_URL = import.meta.env.PUBLIC_SPOTIFY_URL || "";
 export const RADIO_STREAM_URL = import.meta.env.PUBLIC_RADIO_STREAM_URL || "";
 export const SOCIAL_LINKS = {
   youtube: "https://youtube.com/@ministeriocatedraldefuego?si=tjjvBBqS8QNFZEpt",
